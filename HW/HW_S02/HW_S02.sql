@@ -21,5 +21,5 @@ INSERT INTO countries (country_name) VALUES
 INSERT INTO towns (town_name, country_id) VALUES 
 ('Москва', '7'), ('Санкт-Петербург', '7'), ('Новосибирск', '7'), ('Екатеринбург', '7'), ('Казань', '7'), ('Нижний Новгород', '7'), ('Челябинск', '7'), ('Омск', '7'), ('Самара', '7'), ('Красноярск', '7');
 
-SELECT id, country_name FROM countries;
-SELECT id, town_name, country_id FROM towns;
+-- SELECT id, country_name FROM countries;
+-- SELECT id, town_name, country_id FROM towns;

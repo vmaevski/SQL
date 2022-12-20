@@ -41,7 +41,7 @@ FROM users AS u
 JOIN users_communities AS uc ON (
 	u.id = uc.user_id
 )    
-GROUP BY u.id
+GROUP BY u.id;
 
 
 /* Подсчитать количество пользователей в каждом сообществе. */
@@ -54,5 +54,5 @@ JOIN users_communities AS uc ON (
 	c.id = uc.community_id
 )    
 GROUP BY c.id 
-ORDER BY c.name
+ORDER BY c.name;
     

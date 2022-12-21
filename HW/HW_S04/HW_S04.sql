@@ -43,7 +43,6 @@ JOIN users_communities AS uc ON (
 )    
 GROUP BY u.id;
 
-
 /* Подсчитать количество пользователей в каждом сообществе. */
 
 SELECT 
@@ -56,3 +55,24 @@ JOIN users_communities AS uc ON (
 GROUP BY c.id 
 ORDER BY c.name;
     
+/* Подсчитать общее количество лайков, которые получили пользователи младше 10 лет. */   
+
+select 
+	count(*) as count_likes
+from users
+join profiles ON users.id = profiles.user_id
+join media ON users.id = media.user_id
+join likes on media.id = likes.media_id
+WHERE (birthday + INTERVAL 10 YEAR) > NOW(); 
+
+/* Определить кто больше поставил лайков (всего): мужчины или женщины. */
+
+SELECT
+	COUNT(*) AS count_likes,
+    gender
+FROM users
+JOIN profiles ON users.id = profiles.user_id
+JOIN likes ON users.id = likes.user_id
+GROUP BY gender
+ORDER BY count_likes DESC
+LIMIT 1;
